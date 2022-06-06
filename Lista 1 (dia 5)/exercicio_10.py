@@ -16,3 +16,7 @@ if frutas_iguais != set():
     print(f'\nO conjunto de frutas em ambas as listas é: {frutas_iguais}')
 else:
     print("\nNenhuma fruta coincide em ambas as listas")
+
+
+"""Referência que utilizei para a comparação entre listas através da transformação em conjuntos
+https://www.delftstack.com/pt/howto/python/compare-lists-python/"""
