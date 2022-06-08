@@ -1,6 +1,7 @@
 """4- No JSON 1 printe todas as chaves e valores do time visitante"""
 
-import json # importa a biblioteca necessária
+# importa a biblioteca necessária
+import json
 
 # abre o arquivo JSON 1 nomeando-o como partida e o guarda em partida_json
 with open("./arquivos/amF0XHEa.json", encoding='utf-8') as partida:

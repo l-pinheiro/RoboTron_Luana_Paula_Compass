@@ -1,13 +1,14 @@
 """3- Do JSON 1 Guarde apenas o Nome do Estádio, o Placar e o Status do jogo
 dentro de variáveis e mostre-as."""
 
-import json # importa a biblioteca necessária
+# importa a biblioteca necessária
+import json
 
 # abre o arquivo JSON 1 nomeando-o como partida e o guarda em partida_json
 with open("./arquivos/amF0XHEa.json", encoding='utf-8') as partida:
     partida_json = json.load(partida)
 
-# guarda e apresenta o estádio, placar e status do jogo
+# guarda em variáveis e apresenta o estádio, placar e status do jogo
 estadio = partida_json["copa-do-brasil"][0]["estadio"]["nome_popular"]
 print(f'O jogo aconteceu no estádio: {estadio}')
 
