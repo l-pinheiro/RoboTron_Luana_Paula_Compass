@@ -8,12 +8,15 @@ soma = 0
 
 # laço que recebe 20 valores e verifica quais são pares
 for n in range(20):
-    x.append(int(input(f'Digite o {n+1}º valor: '))) # recebe os valores e armazena em x
-    # condição que verifica se o valor recebido é par
+    # recebe os valores e armazena em x
+    x.append(int(input(f'Digite o {n+1}º valor: ')))
+    # condição que verifica se o valor recebido é par e soma eles
     if x[n] % 2 == 0:
-        soma = soma + x[n]  # realiza a soma dos valores pares
+        soma = soma + x[n]
         quant_pares += 1 # intera uma variável aux para guardar o número de valores que são pares
 
-media = soma / quant_pares # calcula a média aritmética
+# calcula a média aritmética
+media = soma / quant_pares
 
-print(f'\nA média aritmética dos valores pares é igual a {media}') # apresenta a média calculada
+# apresenta a média calculada
+print(f'\nA média aritmética dos valores pares é igual a {media}')

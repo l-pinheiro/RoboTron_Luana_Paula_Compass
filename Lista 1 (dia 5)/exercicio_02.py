@@ -4,6 +4,8 @@
 nota_1 = float(input("Digite a 1ª nota: "))
 nota_2 = float(input("Digite a 2ª nota: "))
 
-media = (nota_1 + nota_2)/2 # calcula a média das notas
+# calcula a média das notas
+media = (nota_1 + nota_2)/2
 
-print("\nA média das notas é: ", media) # apresenta o valor calculado da média
+# apresenta o valor calculado da média
+print("\nA média das notas é: ", media)
