@@ -1,0 +1,67 @@
+# MasterClass
+
+# Escrevendo Cenários de Teste na API SERVEREST
+
+POST - Fazer login com sucesso na ServeRest
+- Dados válidos
+- Ter um usuário cadastrado
+- A requisição deve voltar um status 200
+
+GET - No endpoint /usuarios da api ServeRest deve listar todos os usuários
+- Mostrar todos os usuários cadastrados na aplicação
+- A requisição deve voltar um status 200
+
+POST - Criar um usuário novo dentro da api ServeRest em /usuarios
+- Dados válidos
+- O usuário não deve estar cadastrado
+- O usuário dever ter e-mail e senha
+- A requisição deve voltar um status 201
+
+POST - Fazer login com um usuário inválido na api ServeRest
+- Utilizar dados inválidos
+- Não pode estar cadastrado
+- A requisição deve voltar um status 400
+
+POST - Tentar criar usuário com dados inválidos na api ServeRest em /usuarios
+- Utilizar dados inválidos no cadastro
+- O usuário pode já estar cadastrado
+- A requisição deve voltar um status 400
+
+PUT - Tentar editar usuário com o id "0uxuPY0cbmQhpEz1"
+- Utilizar dados válidos para edição
+- Preciso ter certeza que o usuário já está cadastrado
+- A requisição deve voltar um status 200
+
+DELETE - Excluir o usuário com id "0uxuPY0cbmQhpEz1"
+- Validar que o usuário com id "0uxuPY0cbmQhpEz1" existe
+- O usuário com id "0uxuPY0cbmQhpEz1" não deve ter um carrinho cadastrado
+- A requisição deve voltar um status 200
+
+
+#-------------------------------------------------------------------------------------------------#
+# Meus adicionais
+
+GET - No endpoint /produtos da api ServeRest deve listar todos os produtos
+- Mostrar todos os produtos cadastrados na aplicação
+- A requisição deve voltar um status 200
+
+GET - Buscar produto com o id "BeeJh5lz3k6kSIzA"
+- Validar que o produto com id "BeeJh5lz3k6kSIzA" existe
+- A requisição deve voltar um status 200
+
+POST - Tentar cadastrar um produto com nome já utilizado em /produtos
+- Utilizar dados com nome já existente
+- A requisição deve voltar um status 400
+
+DELETE - Tentar excluir produto com o id "BeeJh5lz3k6kSIzA" sem ter permissão de administrador
+- Utilizar dados de usuário sem permissão de administrador
+- Validar que o produto com id "BeeJh5lz3k6kSIzA" existe
+- A requisição deve voltar um status 403
+
+POST - Cadastrar um novo carrinho na api ServeRest em /carrinhos
+- Dados válidos
+- O usuário não deve ter nenhum carrinho cadastrado
+- Validar que não tem produto duplicado
+- Validar se os produtos existem
+- Validar se possui a quantidade de produtos desejada
+- A requisição deve voltar um status 201
