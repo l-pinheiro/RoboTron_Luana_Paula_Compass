@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220618 11:06:11.917" rpa="false" schemaversion="3">
+<suite id="s1" name="Base" source="C:\Users\Luana\Desktop\Robot\base.robot">
+<test id="s1-t1" name="Cenário: GET Todos os Usuarios 200" line="14">
+<kw name="Criar Sessao">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>serverest</arg>
+<arg>https://serverest.dev</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220618 11:06:12.179" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220618 11:06:12.178" endtime="20220618 11:06:12.179"/>
+</kw>
+<status status="PASS" starttime="20220618 11:06:12.178" endtime="20220618 11:06:12.179"/>
+</kw>
+<kw name="GET endpoint /usuarios">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/usuarios</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220618 11:06:13.262" level="INFO">GET Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220618 11:06:13.263" level="INFO">GET Response : url=https://serverest.dev/usuarios 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '189b68a6-7dad-4b99-b085-72b364844aab', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'd94fc48dd8c9dfa4d3d26933482315ce;o=1', 'Date': 'Sat, 18 Jun 2022 14:06:14 GMT', 'Server': 'Google Frontend', 'Content-Length': '9729'} 
+ body={
+    "quantidade": 43,
+    "usuarios": [
+        {
+            "nome": "Aozeni Braga",
+            "email": "Nilsa_Melo33@bol.com.br",
+            "password": "rGU6TfyoujoF6dU",
+            "administrador": "true",
+            "_id": "1F6LBUjcaa46bNDA"
+        },
+        {
+            "nome": "Elan Souza Jr.",
+            "email": "Magno92@yahoo.com",
+            "password": "e4YKrBGzlcy7wlY",
+            "administrador": "true",
+            "_id": "1ZQlrtOxmzELfq0O"
+        },
+        {
+            "nome": "Marcela Albuquerque",
+            "email": "Valria4@bol.com.br",
+            "password": "do07lxsQpqpmR_o",
+            "administrador": "true",
+            "_id": "1c1VXRIWH4LhvNtX"
+        },
+        {
+            "nome": "Dorinaldo Melo",
+            "email": "Silvana.Carvalho21@live.com",
+            "password": "QevcHGWdZCLIg8y",
+            "administrador": "true",
+            "_id": "1qnM1EmM1mcphD6p"
+        },
+        {
+            "nome": "Emiraldo Carvalho",
+            "email": "Denise_Reis29@bol.com.br",
+            "password": "9HWjmzE6YcH7t2K",
+            "administrador": "true",
+            "_id": "4VTvQlTUplCrf6zz"
+        },
+        {
+            "nome": "Celmo Moreira",
+            "email": "Inacio36@yahoo.com",
+            "password": "AL2fAt9PSNthTIX",
+            "administrador": "true",
+            "_id": "77RPs2AVSEWZda1E"
+        },
+        {
+            "nome": "Lucilene Franco",
+            "email": "Auristela.Batista18@yahoo.com",
+            "password": "LDme1hJjDALS5uY",
+            "administrador": "true",
+            "_id": "7A7tW3sLhcPBjoFO"
+        },
+        {
+            "nome": "Ednaldo Costa",
+            "email": "Rongrio_Moreira@bol.com.br",
+            "password": "cQ5b6xE6aTcBjfE",
+            "administrador": "true",
+            "_id": "7junCJL3dRxZJf9K"
+        },
+        {
+            "nome": "Dr. Kyoko Souza",
+            "email": "Valdek_Martins68@yahoo.com",
+            "password": "XVPectubinj62HW",
+            "administrador": "true",
+            "_id": "8E0DokmwjLWPgD3m"
+        },
+        {
+            "nome": "Joanna Mayert",
+            "email": "Margret.Brekke0@yahoo.com",
+            "password": "nbQcYJtP7nszlqx",
+            "administrador": "false",
+            "_id": "8VoKEn6r0wdmdgpb"
+        },
+        {
+            "nome": "Miss Patti Kunde",
+            "email": "misspattikunde@test.com",
+            "password": "Test;123",
+            "administrador": "true",
+            "_id": "9IRM67pHTjTxLA8s"
+        },
+        {
+            "nome": "Schosiro Braga",
+            "email": "Joseilda23@yahoo.com",
+            "password": "6vh1n9SM9p9WZQL",
+            "administrador": "true",
+            "_id": "9xBPeTVSGdKX76S7"
+        },
+        {
+            "nome": "Arethusa Carvalho",
+            "email": "Virgnia23@hotmail.com",
+            "password": "gc90_i8iBZolnBP",
+            "administrador": "true",
+            "_id": "BRrDcVWr0yXamzcQ"
+        },
+        {
+            "nome": "Rizia Santos",
+            "email": "Bernadete.Macedo88@hotmail.com",
+            "password": "2k4EYcCRtmaltNf",
+            "administrador": "true",
+            "_id": "BWOMnY9GsU6IKcgE"
+        },
+        {
+            "nome": "Tu Melo",
+            "email": "Ambrosina39@gmail.com",
+            "password": "9HQKIvXxkaEjSCU",
+            "administrador": "true",
+            "_id": "BjrKGk4Rbb0j05m8"
+        },
+        {
+            "nome": "Lucelia Pereira",
+            "email": "Basilio60@yahoo.com",
+            "password": "jQtN5ikqUxZmrSf",
+            "administrador": "true",
+            "_id": "BnQmorm2LbFeQ8qE"
+        },
+        {
+            "nome": "Erik Predovic",
+            "email": "erikpredovic@test.com",
+            "password": "Test;123",
+            "administrador": "true",
+            "_id": "F9Uawu3Y715VyuXY"
+        },
+        {
+            "nome": "Edi Carvalho",
+            "email": "Constantino_Santos9@hotmail.com",
+            "password": "Ve91Fj1aDio9ums",
+            "administrador": "true",
+            "_id": "HQnsjedrBSqKEtqR"
+        },
+        {
+            "nome": "Ivonise Costa",
+            "email": "Alicia60@hotmail.com",
+            "password": "VQRIIhPTVYVsFEw",
+            "administrador": "true",
+            "_id": "KN7ffNeZhYQAr29Q"
+        },
+        {
+            "nome": "Delario Silva",
+            "email": "Maila.Albuquerque@yahoo.com",
+            "password": "mHlXCeiNMgx2G_v",
+            "administrador": "true",
+            "_id": "L4TeFMIHLeTYpwg0"
+        },
+        {
+            "nome": "Maura Barros",
+            "email": "Incio_Souza@bol.com.br",
+            "password": "LOtROCPY6K_3Kpk",
+            "administrador": "true",
+            "_id": "MiqOPHLsUxOp1KSe"
+        },
+        {
+            "nome": "Larissa Reis",
+            "email": "Conceio39@hotmail.com",
+            "password": "O4IXX1Y4AIp__dr",
+            "administrador": "true",
+            "_id": "ObNH2JGEiWNWr1xO"
+        },
+        {
+            "nome": "Lucicleide Carvalho",
+            "email": "Anis_Carvalho@bol.com.br",
+            "password": "6KKbIBMOiWcWvxh",
+            "administrador": "true",
+            "_id": "PjnMiA6PbJI1qBep"
+        },
+        {
+            "nome": "Gilbertiana Xavier",
+            "email": "Zenilde81@gmail.com",
+            "password": "Him9xi2JVawjRqh",
+            "administrador": "true",
+            "_id": "Pr5i4TczZEYG9kMi"
+        },
+        {
+            "nome": "Camila Barros",
+            "email": "Heloiza_Silva@bol.com.br",
+            "password": "kZfZp7CWkpNR4rI",
+            "administrador": "false",
+            "_id": "R52kwkz6DdNQDxqa"
+        },
+        {
+            "nome": "Hilca Oliveira",
+            "email": "Sueli_Xavier@live.com",
+            "password": "gefPMDXs0HbM0sO",
+            "administrador": "false",
+            "_id": "SGNvwiETDIAyETbv"
+        },
+        {
+            "nome": "Sra. Christina Melo",
+            "email": "Mara_Saraiva@live.com",
+            "password": "4lJrHsC6IygPU_N",
+            "administrador": "true",
+            "_id": "VC6Pt69byHwFETEp"
+        },
+        {
+            "nome": "Dr. Kazumi Braga",
+            "email": "Elza_Macedo@live.com",
+            "password": "4RcHV51M6bFbHzy",
+            "administrador": "true",
+            "_id": "VlWXiyxTpxfKdG40"
+        },
+        {
+            "nome": "Eliezer Costa",
+            "email": "Flvia95@hotmail.com",
+            "password": "OfwvRWwYMvx5lFK",
+            "administrador": "true",
+            "_id": "WrgYwIGMqwvQzxeq"
+        },
+        {
+            "nome": "Denise Reis",
+            "email": "Aline_Carvalho@yahoo.com",
+            "password": "voaJWRqfzFLYlJk",
+            "administrador": "true",
+            "_id": "XPnn8pzkwfh4ySKN"
+        },
+        {
+            "nome": "Delsa Pereira",
+            "email": "Naoko.Reis99@bol.com.br",
+            "password": "BLL4jDFHzshya5Q",
+            "administrador": "true",
+            "_id": "XQslCxiDARwTNLxV"
+        },
+        {
+            "nome": "Mercedes Hoppe",
+            "email": "mercedeshoppe@test.com",
+            "password": "Test;123",
+            "administrador": "true",
+            "_id": "XdqHIIwtjLQydw0n"
+        },
+        {
+            "nome": "Endrigo Souza",
+            "email": "Ubirata_Saraiva@yahoo.com",
+            "password": "Rah4WvUJCiCraYm",
+            "administrador": "true",
+            "_id": "XqjzWkcdYxnSHJ7W"
+        },
+        {
+            "nome": "Josenilde Pereira",
+            "email": "Ester.Albuquerque69@bol.com.br",
+            "password": "KxrNrww3U1Gc7p0",
+            "administrador": "true",
+            "_id": "YlTtECh7AKX0lNEY"
+        },
+        {
+            "nome": "Sra. Romir Santos",
+            "email": "Geny89@gmail.com",
+            "password": "kd0XBuFJzkU6Xj0",
+            "administrador": "true",
+            "_id": "bP4J3KdDTy37Rtqh"
+        },
+        {
+            "nome": "Lêda Carvalho",
+            "email": "Valdio_Silva85@live.com",
+            "password": "_4b2wWz6SvJk750",
+            "administrador": "true",
+            "_id": "cJ5kLdfkK7AD71IK"
+        },
+        {
+            "nome": "Iago Henrique Torres",
+            "email": "Cale_Prosacco46@gmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "cZwv086z3rzUN5eo"
+        },
+        {
+            "nome": "Edvando Carvalho",
+            "email": "Izis_Braga27@bol.com.br",
+            "password": "dqK3KG4kcyVXtes",
+            "administrador": "true",
+            "_id": "cdQNWZj1BKhXMWnL"
+        },
+        {
+            "nome": "Srta. Ormenzindo Santos",
+            "email": "Josenilde_Pereira@bol.com.br",
+            "password": "WvyQAgtL4texim3",
+            "administrador": "true",
+            "_id": "ciiG6GF2yL27zkg4"
+        },
+        {
+            "nome": "Kepler Carvalho",
+            "email": "Ho.Costa@gmail.com",
+            "password": "sw5niB8taGJkH5l",
+            "administrador": "true",
+            "_id": "kcaNZQTlD6LcpqEh"
+        },
+        {
+            "nome": "Srta. Adelara Santos",
+            "email": "Jeane48@yahoo.com",
+            "password": "KZqFiy8UedV__fP",
+            "administrador": "true",
+            "_id": "lA1gX5Pp22JnGd2a"
+        },
+        {
+            "nome": "Cristiana Batista",
+            "email": "Toshio_Santos41@gmail.com",
+            "password": "rgACE1J5aP4maF_",
+            "administrador": "true",
+            "_id": "mRFirIc1WLiHYPTb"
+        },
+        {
+            "nome": "Toshihiro Souza",
+            "email": "Brasenilde_Macedo93@hotmail.com",
+            "password": "aLeF6vSGjEQHjlw",
+            "administrador": "true",
+            "_id": "scORjywbTTvTFCzD"
+        }
+    ]
+} 
+ </msg>
+<msg timestamp="20220618 11:06:13.264" level="INFO">C:\Users\Luana\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220618 11:06:13.265" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220618 11:06:12.180" endtime="20220618 11:06:13.266"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220618 11:06:13.268" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220618 11:06:13.266" endtime="20220618 11:06:13.269"/>
+</kw>
+<status status="PASS" starttime="20220618 11:06:12.179" endtime="20220618 11:06:13.269"/>
+</kw>
+<kw name="Validar status code &quot;200&quot;" sourcename="Validar status code &quot;${statuscode}&quot;">
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220618 11:06:13.272" endtime="20220618 11:06:13.275"/>
+</kw>
+<status status="PASS" starttime="20220618 11:06:13.270" endtime="20220618 11:06:13.276"/>
+</kw>
+<status status="PASS" starttime="20220618 11:06:12.177" endtime="20220618 11:06:13.278"/>
+</test>
+<doc>Arquivo simples para requisições HTTP em APIs Rest</doc>
+<status status="PASS" starttime="20220618 11:06:11.919" endtime="20220618 11:06:13.281"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Base">Base</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
