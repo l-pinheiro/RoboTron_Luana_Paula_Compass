@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220622 09:07:38.250" rpa="false" schemaversion="3">
+<suite id="s1" name="Base" source="C:\Users\Luana\Desktop\Robot\Dia_04\base.robot">
+<test id="s1-t1" name="Cenario: POST Criar Produto 201" line="46">
+<kw name="Criar Sessao">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>serverest</arg>
+<arg>https://serverest.dev</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220622 09:07:38.369" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220622 09:07:38.369" endtime="20220622 09:07:38.369"/>
+</kw>
+<status status="PASS" starttime="20220622 09:07:38.369" endtime="20220622 09:07:38.369"/>
+</kw>
+<kw name="POST endpoint /produtos" library="produtos_keywords">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{header}</var>
+<arg>Authorization=${token_auth}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220622 09:07:38.370" level="INFO">&amp;{header} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU1ODk5NjAyLCJleHAiOjE2NTU5MDAyMDJ9.Kg8loWA29sUDJw3hEwzM6R7k0jBguGPKcHl...</msg>
+<status status="PASS" starttime="20220622 09:07:38.370" endtime="20220622 09:07:38.370"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{payload}</var>
+<arg>nome=MouseTechs</arg>
+<arg>preco=400</arg>
+<arg>descricao=Mouse</arg>
+<arg>quantidade=100</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220622 09:07:38.372" level="INFO">&amp;{payload} = { nome=MouseTechs | preco=400 | descricao=Mouse | quantidade=100 }</msg>
+<status status="PASS" starttime="20220622 09:07:38.371" endtime="20220622 09:07:38.372"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/produtos</arg>
+<arg>data=&amp;{payload}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220622 09:07:38.836" level="INFO">POST Request : url=https://serverest.dev/produtos 
+ path_url=/produtos 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU1ODk5NjAyLCJleHAiOjE2NTU5MDAyMDJ9.Kg8loWA29sUDJw3hEwzM6R7k0jBguGPKcHldwWpfIeo', 'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=nome=MouseTechs&amp;preco=400&amp;descricao=Mouse&amp;quantidade=100 
+ </msg>
+<msg timestamp="20220622 09:07:38.836" level="INFO">POST Response : url=https://serverest.dev/produtos 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '947ff9d5-3d41-4123-ad46-b33aa4d3956d', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'baccbf7cfeaca9c1630fa6e5a3b46b16', 'Date': 'Wed, 22 Jun 2022 12:07:40 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "6r9fu3GcvXNq7lI3"
+} 
+ </msg>
+<msg timestamp="20220622 09:07:38.836" level="INFO">C:\Users\Luana\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220622 09:07:38.840" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220622 09:07:38.372" endtime="20220622 09:07:38.840"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220622 09:07:38.841" endtime="20220622 09:07:38.841"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220622 09:07:38.845" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220622 09:07:38.841" endtime="20220622 09:07:38.846"/>
+</kw>
+<status status="PASS" starttime="20220622 09:07:38.370" endtime="20220622 09:07:38.846"/>
+</kw>
+<kw name="Validar status code &quot;201&quot;" sourcename="Validar status code &quot;${statuscode}&quot;">
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220622 09:07:38.848" endtime="20220622 09:07:38.848"/>
+</kw>
+<status status="PASS" starttime="20220622 09:07:38.846" endtime="20220622 09:07:38.848"/>
+</kw>
+<tag>POST.PRODUTO</tag>
+<status status="PASS" starttime="20220622 09:07:38.368" endtime="20220622 09:07:38.853"/>
+</test>
+<doc>Arquivo simples para requisições HTTP em APIs Rest</doc>
+<status status="PASS" starttime="20220622 09:07:38.252" endtime="20220622 09:07:38.859"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">POST.PRODUTO</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Base">Base</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

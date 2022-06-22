@@ -4,17 +4,20 @@
 * Settings *
 Documentation       Arquivo simples para requisições HTTP em APIs Rest
 Library             RequestsLibrary
+Resource            ./usuarios_keywords.robot
+Resource            ./login_keywords.robot
+Resource            ./produtos_keywords.robot
+Resource            ./carrinhos_keywords.robot
 
 
 # Sessão para setagem de variáveis para utilização
 * Variables *
 
 
-
 # Sessão para criação dos cenários de teste
 * Test Cases *
 Cenario: GET Todos os Usuarios 200
-    [tags]      GET
+    [tags]      GET.USUARIOS
     Criar Sessao
     GET endpoint /usuarios
     Validar status code "200"
@@ -22,23 +25,29 @@ Cenario: GET Todos os Usuarios 200
     Printar conteudo response
 
 Cenario: POST Cadastrar Usuario 201
-    [tags]     POST
+    [tags]     POST.USUARIO
     Criar Sessao
     POST endpoint /usuarios
     Validar status code "201"
     Validar se mensagem contem "sucesso"
 
 Cenario: PUT Editar Usuario 200
-    [tags]     PUT
+    [tags]     PUT.USUARIO
     Criar Sessao
     PUT endpoint /usuarios
     Validar status code "200"
 
 Cenario: DELETE Deletar Usuario 200
-    [tags]     DELETE
+    [tags]     DELETE.USUARIO
     Criar Sessao
     DELETE endpoint /usuarios
     Validar status code "200"
+
+Cenario: POST Criar Produto 201
+    [tags]     POST.PRODUTO
+    Criar Sessao
+    POST endpoint /produtos
+    Validar status code "201"
 
 #------------------------------------------------------------------------------------------------------------------------------------------------#
 # Meus adicionais
@@ -78,27 +87,6 @@ Cenario: GET Produto Especifico 200
 Criar Sessao
     Create Session          serverest   https://serverest.dev   #também pode ser url localhost
 
-GET endpoint /usuarios
-    ${response}             GET On Session      serverest   /usuarios
-    Set Global Variable     ${response}
-
-POST endpoint /usuarios
-    &{payload}              Create Dictionary   nome=jarbaass priest   email=testeeiulll@gmail.com  password=123    administrador=true
-    ${response}             POST On Session      serverest   /usuarios  data=&{payload}
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
-PUT endpoint /usuarios
-    &{payload}              Create Dictionary   nome=jerso priest   email=testeeiuprewasl@gmail.com  password=123    administrador=true
-    ${response}             PUT On Session      serverest   /usuarios/g7qCgmsFeYNf5O91  data=&{payload}
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
-DELETE endpoint /usuarios
-    ${response}             DELETE On Session      serverest   /usuarios/g7qCgmsFeYNf5O91
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
 Validar status code "${statuscode}"
     Should Be True          ${response.status_code} == ${statuscode}
 
@@ -115,23 +103,3 @@ Printar conteudo response
 #------------------------------------------------------------------------------------------------------------------------------------------------#
 # Meus adicionais
 
-GET endpoint /usuarios/${id_usuario}
-    ${response}             GET On Session      serverest   /usuarios/${id_usuario}
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
-POST endpoint /login
-    &{payload}              Create Dictionary   email=fulano@qa.com  password=teste
-    ${response}             POST On Session      serverest   /login  data=&{payload}
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
-GET endpoint /produtos/${id_produto}
-    ${response}             GET On Session      serverest   /produtos/${id_produto}
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
-GET endpoint /produtos
-    ${response}             GET On Session      serverest   /produtos
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
