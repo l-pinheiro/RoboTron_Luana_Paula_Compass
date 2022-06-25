@@ -4,7 +4,7 @@ Library             OperatingSystem
 
 
 * Variables *
-
+${id_invalido}          IdInvalido123
 
 
 * Keywords *
@@ -17,7 +17,5 @@ Importar JSON estatico
     ${data}                 Evaluate    json.loads('''${arquivo}''')        json
     [return]                ${data}
 
-#------------------------------------------------------------------------------------------------------------------------------------------------#
-# Meus adicionais
 Validar a mensagem "${mensagem}"
     Should Be Equal         ${response.json()["message"]}   ${mensagem}
