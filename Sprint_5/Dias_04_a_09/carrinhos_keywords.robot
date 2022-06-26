@@ -33,8 +33,7 @@ DELETE endpoint /carrinhos
     Set Global Variable     ${response}
 
 Adicionar um produto no carrinho
-    #[Arguments]             ${quantidade}
-    Encontrar id de um produto_valido cadastrado
+    Encontrar id de um produto cadastrado
     ${json}=                Convert String to JSON    {"produtos": []}
     ${payload}              Create Dictionary   idProduto=${id_produto}   quantidade=${quantidade}
     #${json}                 Importar JSON estatico      json_carrinho_ex.json
@@ -42,7 +41,7 @@ Adicionar um produto no carrinho
     Set Global Variable     ${json}
 
 Fazer login e adicionar carrinho
-    Fazer login e armazenar token   usuario_valido_adm
+    Fazer login e armazenar token   usuario_valido_api
     Adicionar um produto no carrinho
     POST endpoint /carrinhos     ${token_auth}
 

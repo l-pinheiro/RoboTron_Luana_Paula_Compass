@@ -5,6 +5,7 @@ Library             OperatingSystem
 
 * Variables *
 ${id_invalido}          IdInvalido123
+${token_invalido}       tokeninvalido123
 
 
 * Keywords *
@@ -19,3 +20,7 @@ Importar JSON estatico
 
 Validar a mensagem "${mensagem}"
     Should Be Equal         ${response.json()["message"]}   ${mensagem}
+
+Validar no campo a mensagem
+    [Arguments]             ${campo}    ${mensagem}
+    Should Be Equal         ${response.json()["${campo}"]}   ${mensagem}

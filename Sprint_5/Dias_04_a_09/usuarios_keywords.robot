@@ -38,7 +38,6 @@ Criar ${tipo_de_usuario} estatico
 Cadastrar ${tipo_de_usuario} e armazenar id
     Criar ${tipo_de_usuario} estatico
     POST endpoint /usuarios
-    Validar ter criado usuario
     ${id_usuario}           Set Variable    ${response.json()["_id"]}
     Set Global Variable     ${id_usuario}
 
@@ -67,11 +66,4 @@ Criar novo usuario
     ${senha_do_usuario}            FakerLibrary.Password
     ${data}                        Create Dictionary   nome=${nome_do_usuario}   email=${email_do_usuario}  password=${senha_do_usuario}    administrador=true
     [return]                       ${data}
-
-# temporario - apagar usuarios
-armazenar id
-    GET endpoint /usuarios
-    ${id_usuario}           Set Variable    ${response.json()["usuarios"][0]["_id"]}
-    Log to Console          ID Usuario:     ${id_usuario}
-    Set Global Variable     ${id_usuario}
 

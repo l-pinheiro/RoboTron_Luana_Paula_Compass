@@ -1,26 +1,22 @@
 {
-    "usuario_valido_adm": {
-        "email": "james.bondes@gmail.com",
-        "password": "teste123"
-    },
     "usuario_valido_nao_adm": {
         "email": "jhony.bravo@gmail.com",
         "password": "teste123"
     },
     "usuario_valido_api": {
         "email": "fulano@qa.com",
-        "senha": "teste"
+        "password": "teste"
     },
     "usuario_invalido": {
         "email": "emailinvalido@gmail.com",
-        "senha": "senhainvalida"
+        "password": "senhainvalida"
     },
     "usuario_sem_senha": {
         "email": "fulano@qa.com",
-        "senha": ""
+        "password": ""
     },
     "usuario_sem_email": {
         "email": "",
-        "senha": "teste"
+        "password": "teste"
     }
 }

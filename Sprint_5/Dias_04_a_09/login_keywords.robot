@@ -12,7 +12,6 @@ Fazer login e armazenar token
     [Arguments]             ${usuario_adm}
     Criar ${usuario_adm} estatico login
     POST endpoint /login
-    Validar ter logado
     ${token_auth}           Set Variable    ${response.json()["authorization"]}
     Set Global Variable     ${token_auth}
 

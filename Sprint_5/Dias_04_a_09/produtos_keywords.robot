@@ -21,7 +21,7 @@ POST endpoint /produtos
     Set Global Variable     ${response}
 
 PUT endpoint /produtos
-    [Arguments]             ${token_auth}           
+    [Arguments]             ${token_auth}       ${id_produto}=${id_produto}        
     &{header}               Create Dictionary    Authorization=${token_auth}
     ${response}             PUT On Session      serverest   /produtos/${id_produto}       headers=${header}     json=&{payload}     expected_status=any
     Log to Console          Response: ${response.content}
@@ -34,13 +34,9 @@ DELETE endpoint /produtos
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
-Encontrar id de um produto_valido cadastrado
+Encontrar id de um produto cadastrado
     GET endpoint /produtos
     ${id_produto}           Set Variable    ${response.json()["produtos"][0]["_id"]}
-    Set Global Variable     ${id_produto}
-
-Gerar id_invalido
-    ${id_produto}           Set Variable    ${id_invalido}
     Set Global Variable     ${id_produto}
 
 Validar ter criado produto
@@ -48,10 +44,9 @@ Validar ter criado produto
     Should Not Be Empty     ${response.json()["_id"]}
 
 Criar ${tipo_de_produto} e armazenar id
-    Fazer login e armazenar token   usuario_valido_adm
+    Fazer login e armazenar token   usuario_valido_api
     Gerar ${tipo_de_produto} estatico
     POST endpoint /produtos     ${token_auth}
-    #Validar ter criado produto
     ${id_produto}           Set Variable    ${response.json()["_id"]}
     Set Global Variable     ${id_produto}
 

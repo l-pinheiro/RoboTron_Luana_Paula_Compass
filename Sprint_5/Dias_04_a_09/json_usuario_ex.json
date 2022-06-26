@@ -1,7 +1,49 @@
 {
-    "usuario_valido_adm": {
+    "usuario_valido1_adm": {
         "nome": "James Bond",
-        "email": "james.bondessssssssss@gmail.com",
+        "email": "james.bond@gmail.com",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "usuario_valido2_adm": {
+        "nome": "Robert Baxter",
+        "email": "robert.baxter@gmail.com",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "usuario_valido3_adm": {
+        "nome": "Dena Schwartz",
+        "email": "dena.schwartz@gmail.com",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "usuario_valido3_editado": {
+        "nome": "Dena Schwartz Editado",
+        "email": "dena.schwartz@gmail.com",
+        "password": "teste12345",
+        "administrador": "false"
+    },
+    "usuario_valido4_adm": {
+        "nome": "Crystal Porter",
+        "email": "crystal.porter@gmail.com",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "usuario_valido5_adm": {
+        "nome": "Lee Spivey",
+        "email": "lee.spivey@gmail.com",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "usuario_valido6_adm": {
+        "nome": "Mattie Sanchez",
+        "email": "mattie.sanchez@gmail.com",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "usuario_cadastro_email_igual": {
+        "nome": "Harry Petter",
+        "email": "harry.petter@gmail.com",
         "password": "teste123",
         "administrador": "true"
     },
@@ -11,18 +53,6 @@
         "password": "teste123",
         "administrador": "false"
     },
-    "usuario_valido_editado": {
-        "nome": "James Bond Agente",
-        "email": "james.bondes.agente@gmail.com",
-        "password": "teste12345",
-        "administrador": "true"
-    },
-    "usuario_email_igual": {
-        "nome": "James Bond",
-        "email": "james.bondes.agente@gmail.com",
-        "password": "teste123",
-        "administrador": "true"
-    },
     "usuario_invalido": {
         "nome": "Invalido Tester",
         "email": "fulano@qa.com",
@@ -31,7 +61,7 @@
     },
     "usuario_sem_senha": {
         "nome": "Arnold Scwarz",
-        "email": "jaasdasd@gmail.com",
+        "email": "arnold.scwarz@gmail.com",
         "password": "",
         "administrador": "true"
     },
